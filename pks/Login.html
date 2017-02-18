@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Login</title>
+
+<script type="text/javascript">
+
+NewImg = new Array("baloon.jpg", "bridge.jpg", "buzzinez.jpg", "ff.jpg", "k.jpg", "ppr.jpg");
+var ImgNum = 0;
+var ImgLength = NewImg.length - 1;
+//Time delay between Slides in milliseconds
+var delay = 6000;
+var lock = false;
+var run;
+function chgImg(direction) 
+{
+if (document.images) 
+{
+ImgNum = ImgNum + direction;
+if (ImgNum > ImgLength)
+ {
+ImgNum = 0;
+}
+if (ImgNum < 0) 
+{
+ImgNum = ImgLength;
+}
+document.slideshow.src = NewImg[ImgNum];
+   }
+}
+function auto()
+ {
+if (lock == true) 
+{
+lock = false;
+window.clearInterval(run);
+}
+else if (lock == false) 
+{
+lock = true;
+run = setInterval("chgImg(1)", delay);
+  }
+}
+
+
+</script>
+<style type="text/css">
+body{margin:0 auto; padding:0px; background-color:#580001; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#2f1a1a;}
+p{margin:0 auto; font-family:"Times New Roman", Times, serif; color:#FFFFFF; font-size:16px;}
+#nav{margin-left:82px; margin-right:82px;}
+#nav ul{list-style:none; padding:0px; margin:0px;}
+#nav ul li{display:block; position:relative; float:left; border:1px solid #000; width:195px; }
+#nav ul li a {display: block;background: #000;padding: 5px 10px 5px 10px;text-decoration: none;
+           white-space: nowrap;color: #fff;}
+#nav ul li a:hover {background: #f00;}
+
+h1{text-align:center;margin:0; auto; padding:0px; text-decoration:underline;}
+.yellow-heading{color:#999933; font-size:18px;text-decoration:underline;}
+.red-heading{color:#FF0000;}
+.left-bullet{text-align:center;color:#0A3276;}
+.left-bullet a{color:#CC9900; text-decoration:none;}
+.left-bullet a:hover{text-decoration:underline;}
+.news{margin:0 auto; padding:0px;background-color:#FF0033; margin-left:988px;margin-right:82px;}
+h2{text-align:center;color:#CCCC33;}
+#footer{ line-height:61px;background-image:url(footer.jpg);background-repeat:no-repeat;background-position:left-top;width:1200px;height:61px;margin-left:82px;maargin-right:82px;}
+#footer p{font-size:12px;color:#FFFFFFF;float:left;}
+#footer ul{float:right; list-style:none;}
+#footer ul li{display:inline;padding:0px 10px;border-left-width:1px;border-left-style:solid;border-left-color:#FFFFFF;}
+#footer ul li a{font-size:12px;color:#FFFFFF;text-decoration:none;}
+#footer ul li a:hover{text-decoration:underline;}
+</style></head>
+
+<body onload="javascript:auto()">
+<div id="header">
+<center>
+<img src="k.jpg" name="slideshow" width="1185px" height="350px" />
+</center>
+</div>
+<div id="nav">
+<center>
+<ul>
+<li><a href="zwebsite.html">Home</a></li>
+<li><a href="article.html">Articles</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="links.html">Links</a></li>
+<li><a href="Login.html">Login</a></li>
+</ul>
+</center>
+</div>
+<div id="mid-right-container">
+<center>
+<table width="1185px">
+<tr>
+<td width="890px" style="background-color:#000033;">
+<form action="#" method="post">
+<p align="center"><strong>Login</strong></p>
+
+<p align="center">username<input type="text" name="username" required="required" placeholder="username"></p>
+<p align="center">Password<input type="password" name="Password" required="required" placeholder="************"></p>
+<p align="center"><input type='submit' value='login' name="login" /></p>
+<p class="left-bullet"><a href="register.html">Registration</a></p>
+<p align="center"><strong>Or also connect with:</strong></p>
+<p class="left-bullet"><a href="#"><img src="FB.jpg" width="100px" height="50px" /></a></p>
+<p class="left-bullet"><a href="#"><img src="gp.jpg" width="100px" height="50px" /></a></p>
+</form>
+<td width="295px" style="background-image:url(buzzinez.jpg);">
+<h2>NEWS</h2>
+<p align="center"><strong><marquee>Any new information about new technology are shown here</marquee></strong></p>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<div id="footer">
+<p>&copy; Copyright 2015. Designed by <a target="_blank" href="http://www.zwebsite.net">zerowebsite</a></p>
+<ul>
+<li style="border-left: medium none;"><a href="zwebsite.html">home</a></li>
+<li><a href="article.html">articles</a></li>
+<li><a href="gallery.html">gallery</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="links.html">links</a></li>
+<li><a href="Login.html">login</a></li>
+</ul>
+</div>
+
+</body>
+</html>
+
+
+

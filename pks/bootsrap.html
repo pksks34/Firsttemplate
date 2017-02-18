@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h2>Click on each of the buttons to see the effects of methods</h2>
+<h4>Example to demonstrate  .button('toggle') method</h4>
+<div id="myButtons1" class="bs-example">
+   <button type="button" class="btn btn-primary">Primary</button>
+</div>
+
+<h4>Example to demonstrate  .button('loading') method</h4>
+<div id="myButtons2" class="bs-example">
+   <button type="button" class="btn btn-primary" 
+      data-loading-text="Loading...">Primary
+   </button>
+</div>
+
+<h4>Example to demonstrate  .button('reset') method</h4>
+<div id="myButtons3" class="bs-example">
+   <button type="button" class="btn btn-primary" 
+      data-loading-text="Loading...">Primary
+   </button>
+</div>
+
+<h4>Example to demonstrate  .button(string) method</h4>
+<button type="button" class="btn btn-primary" id="myButton4" 
+   data-complete-text="Loading finished">Click Me
+</button>
+<script type="text/javascript">
+   $(function () {
+      $("#myButtons1 .btn").click(function(){
+         $(this).button('toggle');
+      });
+   });
+   $(function() { 
+      $("#myButtons2 .btn").click(function(){
+         $(this).button('loading').delay(1000).queue(function() {
+         });        
+      });
+   });   
+   $(function() { 
+      $("#myButtons3 .btn").click(function(){
+         $(this).button('loading').delay(1000).queue(function() {
+            $(this).button('reset');
+         });        
+      });
+   });  
+   $(function() { 
+      $("#myButton4").click(function(){
+         $(this).button('loading').delay(1000).queue(function() {
+            $(this).button('complete');
+         });        
+      });
+   }); 
+</script> 
+</body>
+</html>

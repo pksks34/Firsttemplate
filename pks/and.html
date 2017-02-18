@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Android</title>
+</head>
+
+<body>
+<p>Android software development is the process by which new applications are created for the Android operating system. Applications are usually developed in Java programming language using the Android software development kit (SDK), but other development environments are also available.
+
+As of July 2013, more than one million applications have been developed for Android,[2] with over 25 billion downloads.[3][4] A June 2011 research indicated that over 67% of mobile developers used the platform, at the time of publication.[5] In Q2 2012, around 105 million units of Android smartphones were shipped which acquires a total share of 68% in overall smartphones sale till Q2 2012.[6]
+
+Contents  [hide] 
+1 Official development tools
+1.1 Android SDK
+1.1.1 Android Debug Bridge
+1.1.2 Fastboot
+1.2 Android NDK
+1.3 Android Open Accessory Development Kit
+1.4 Native Go support
+2 Third-party development tools
+2.1 Android APIMiner
+2.2 AndroWish
+2.3 App Inventor for Android
+2.4 Basic4android
+2.5 Corona SDK
+2.6 Delphi
+2.7 HyperNext Android Creator
+2.8 Kivy
+2.9 Lazarus
+2.10 Processing
+2.11 Qt for Android
+2.12 RFO BASIC!
+2.13 RubyMotion
+2.14 Saphir
+2.15 SDL
+2.16 The Simple project
+2.17 Visual Studio 2015
+2.18 WinDev Mobile
+2.19 Xamarin
+2.20 X11 Basic
+3 Android Developer Challenge
+4 Community-based firmware
+5 Java standards
+6 History
+7 See also
+8 References
+9 Bibliography
+10 External links
+Official development tools[edit]
+Android SDK[edit]
+Android SDK
+Developer(s)	Google
+Initial release	October 2009; 5 years ago
+Stable release	24.3.3 / June 2015; 1 month ago[7]
+Written in	Java
+Operating system	Cross-platform
+Available in	English
+Type	IDE, SDK
+Website	developer.android.com/tools/sdk/eclipse-adt.html, developer.android.com/sdk/index.html
+The Android software development kit (SDK) includes a comprehensive set of development tools.[8] These include a debugger, libraries, a handset emulator based on QEMU, documentation, sample code, and tutorials. Currently supported development platforms include computers running Linux (any modern desktop Linux distribution), Mac OS X 10.5.8 or later, and Windows XP or later. As of March 2015, the SDK is not available on Android itself, but the software development is possible by using specialized Android applications.[9][10][11]
+
+Until around the end of 2014, the officially supported integrated development environment (IDE) was Eclipse using the Android Development Tools (ADT) Plugin, though IntelliJ IDEA IDE (all editions) fully supports Android development out of the box,[12] and NetBeans IDE also supports Android development via a plugin.[13] As of 2015, Android Studio,[14] made by Google and powered by IntelliJ, is the official IDE; however, developers are free to use others. Additionally, developers may use any text editor to edit Java and XML files, then use command line tools (Java Development Kit and Apache Ant are required) to create, build and debug Android applications as well as control attached Android devices (e.g., triggering a reboot, installing software package(s) remotely).[15]
+
+Enhancements to Android's SDK go hand in hand with the overall Android platform development. The SDK also supports older versions of the Android platform in case developers wish to target their applications at older devices. Development tools are downloadable components, so after one has downloaded the latest version and platform, older platforms and tools can also be downloaded for compatibility testing.[16]
+
+Android applications are packaged in .apk format and stored under /data/app folder on the Android OS (the folder is accessible only to the root user for security reasons). APK package contains .dex files[17] (compiled byte code files called Dalvik executables), resource files, etc.
+
+Android Debug Bridge[edit]
+The Android Debug Bridge (ADB) is a toolkit included in the Android SDK package. It consists of both client and server-side programs that communicate with one another. The ADB is typically accessed through the command-line interface,[18] although numerous graphical user interfaces exist to control ADB.
+
+The format for issuing commands through the ADB is typically:
+
+adb [-d|-e|-s <serialNumber>] <command>
+In a security issue reported in March 2011, ADB was targeted as a vector to attempt to install a rootkit on connected phones using a "resource exhaustion attack".[19]
+
+Fastboot[edit]
+"Fastboot" redirects here. For the PC fast booting ability, see Instant-on.
+Fastboot is a diagnostic protocol included with the SDK package used primarily to modify the flash filesystem via a USB connection from host computer. It requires that the device be started in a boot loader or Secondary Program Loader mode, in which only the most basic hardware initialization is performed. After enabling the protocol on the device itself, it will accept a specific set of commands sent to it via USB using a command line. Some of the most commonly used fastboot commands include:
+
+flash – rewrites a partition with a binary image stored on the host computer
+erase – erases a specific partition
+reboot – reboots the device into either the main operating system, the system recovery partition or back into its bootloader
+devices – displays a list of all devices (with the serial number) connected to the host computer
+format – formats a specific partition; the file system of the partition must be recognized by the device
+Android NDK[edit]
+Android NDK
+Developer(s)	Google
+Initial release	June 2009; 6 years ago[20]
+Stable release	10e / May 2015; 2 months ago[20]
+Written in	C and C++
+Operating system	Cross-platform
+Available in	English
+Type	IDE, SDK
+Website	developer.android.com/tools/sdk/ndk/index.html
+Libraries written in C, C++ and other languages can be compiled to ARM, MIPS or x86 native code and installed using the Android Native Development Kit (NDK). Native classes can be called from Java code running under the Dalvik VM using the System.loadLibrary call, which is part of the standard Android Java classes.[21][22]
+
+Complete applications can be compiled and installed using traditional development tools.[23] However, according to the Android documentation, NDK should not be used solely for developing applications only because the developer prefers to program in C/C++, as using NDK increases complexity while most applications would not benefit from using it.[24]
+
+The ADB debugger gives a root shell under the Android Emulator which allows ARM, MIPS or x86 native code to be uploaded and executed. Native code can be compiled using GCC or the Intel C++ Compiler on a standard PC.[25] Running native code is complicated by Android's use of a non-standard C library (libc, known as Bionic). The graphics library that Android uses to arbitrate and control access to this device is called the Skia Graphics Library (SGL), and it has been released under an open source licence.[26] Skia has backends for both Win32 and Unix, allowing the development of cross-platform applications, and it is the graphics engine underlying the Google Chrome web browser.[27]
+
+Unlike Java application development based on an IDE such as Eclipse, the NDK is based on command-line tools and requires invoking them manually to build, deploy and debug the apps. Several third-party tools allow integrating the NDK into Eclipse[28] and Visual Studio.[29]
+
+Android Open Accessory Development Kit[edit]
+The Android 3.1 platform (also backported to Android 2.3.4) introduces Android Open Accessory support, which allows external USB hardware (an Android USB accessory) to interact with an Android-powered device in a special "accessory" mode. When an Android-powered device is in accessory mode, the connected accessory acts as the USB host (powers the bus and enumerates devices) and the Android-powered device acts as the USB device. Android USB accessories are specifically designed to attach to Android-powered devices and adhere to a simple protocol (Android accessory protocol) that allows them to detect Android-powered devices that support accessory mode.[30]
+
+Native Go support[edit]
+Since version 1.4 of the Go programming language, writing applications for Android is supported without requiring any Java code, although with a restricted set of Android APIs.[31]
+
+Third-party development tools[edit]
+Android APIMiner[edit]
+Android APIMiner is a platform that automatically instruments the Javadoc documentation of the Android API with examples of usage, extracted from real open-source Android applications.[32] To improve the quality of the extracted examples, APIMiner relies on an intra-procedural static slicing algorithm.
+
+AndroWish[edit]
+AndroWish is an on-device Tcl/Tk interpreter which provides multi-windows GUI and give access to Bluetooth, USB, network sockets, text-to-speech, speech recognition, sensor, location (GPS or network information), activity manager, SQLite and sound. The GUI layer relies on SDL2. AndroWish is provided with 337 Tcl packages.[33]
+
+App Inventor for Android[edit]
+Main article: Google App Inventor
+On July 12, 2010, Google announced the availability of App Inventor for Android, a Web-based visual development environment for novice programmers, based on MIT's Open Blocks Java library and providing access to Android devices' GPS, accelerometer and orientation data, phone functions, text messaging, speech-to-text conversion, contact data, persistent storage, and Web services, initially including Amazon and Twitter.[34] "We could only have done this because Android’s architecture is so open," said the project director, MIT's Hal Abelson.[35] Under development for over a year,[36] the block-editing tool has been taught to non-majors in computer science at Harvard, MIT, Wellesley, Trinity College (Hartford,) and the University of San Francisco, where Professor David Wolber developed an introductory computer science course and tutorial book for non-computer science students based on App Inventor for Android.[37][38]
+
+In the second half of 2011, Google released the source code, terminated its Web service, and provided funding for the creation of The MIT Center for Mobile Learning, led by the App Inventor creator Hal Abelson and fellow MIT professors Eric Klopfer and Mitchel Resnick.[39][40] Latest version created as the result of Google–MIT collaboration was released in February 2012, while the first version created solely by MIT was launched in March 2012[41] and upgraded to App Inventor 2 in December 2013.[42] As of 2014, App inventor is now maintained by MIT.[citation needed]
+
+Basic4android[edit]
+Basic4android is a commercial product similar to Simple.[43] It is inspired by Microsoft Visual Basic 6 and Microsoft Visual Studio. It makes android programming much simpler for regular Visual Basic programmers who find coding in Java difficult. Basic4android is very active, and there is a strong online community of Basic4android developers.
+
+Corona SDK[edit]
+Corona SDK is a software development kit (SDK) created by Walter Luh, founder of Corona Labs Inc.. Corona SDK allows software programmers to build mobile applications for iPhone, iPad and Android devices.
+
+Corona lets developers build graphic applications by using its integrated Lua language, which is layered on top of C++/OpenGL. The SDK does uses a subscription-based purchase model, without requiring any per-application royalties and imposing no branding requirements.
+
+Delphi[edit]
+Delphi can also be used for creating Android application in the Object Pascal language. The latest release is Delphi XE8, developed by Embarcadero.[44]
+
+HyperNext Android Creator[edit]
+HyperNext Android Creator (HAC) is a software development system aimed at beginner programmers that can help them create their own Android apps without knowing Java and the Android SDK. It is based on HyperCard that treated software as a stack of cards with only one card being visible at any one time and so is well suited to mobile phone applications that have only one window visible at a time. HyperNext Android Creator's main programming language is simply called HyperNext and is loosely based on Hypercard's HyperTalk language. HyperNext is an interpreted English-like language and has many features that allow creation of Android applications. It supports a growing subset of the Android SDK including its own versions of the GUI control types and automatically runs its own background service so apps can continue to run and process information while in the background.
+
+Kivy[edit]
+Kivy is an open source Python library for developing multitouch application software with a natural user interface (NUI) for a wide selection of devices. Kivy provides the possibility of maintaining a single application for numerous operating systems ("code once, run everywhere"). Kivy has a custom-built deployment tool for deploying mobile applications called Buildozer, which is available only for Linux. Buildozer is currently alpha software, but is far less cumbersome than older Kivy deployment methods. Applications programmed with Kivy can be submitted to any Android mobile application distribution platform.
+
+Lazarus[edit]
+Lazarus may be used to develop Android applications using Pascal language with Free Pascal compiler starting from version 2.7.1.
+
+Processing[edit]
+The Processing environment, which also uses the Java language, has supported an Android mode since version 1.5; integration with device camera and sensors is possible using the Ketai library.
+
+Qt for Android[edit]
+Qt for Android enables Qt 5 applications to run on devices with Android v2.3.3 (API level 10) or later.[45] Qt is a cross-platform application framework which can target platforms such as Android, Linux, iOS, Sailfish OS and Windows. Qt application development is done in standard C++ and QML, requiring both the Android NDK and SDK.[46] Qt Creator is the integrated development environment provided with the Qt Framework for multi-platform application development.
+
+RFO BASIC![edit]
+RFO BASIC!, a dialect of Dartmouth Basic, is an on-device interpreter with libraries for access to hardware, sensors, sound, graphics, multitouch, file system, SQLite, networking, HTML GUI, encryption, SMS, phone, email, text-to-speech, voice recognition, GPS and other functions. It is open-source software, and can produce stand-alone APKs.[47] Development of RFO Basic is active as of March 2015.
+
+RubyMotion[edit]
+RubyMotion is a toolchain to write native mobile apps in Ruby. As of version 3.0, RubyMotion supports Android. RubyMotion Android apps can call into the entire set of Java Android APIs from Ruby, can use 3rd-party Java libraries, and are statically compiled into machine code.[48]
+
+Saphir[edit]
+Saphir is a fork of the open source Rebol 3 (R3) interpreter.[49] All R3 functionality, including GUI, graphics, network access, file access, parse, and other core features are portable across Android, Windows, Mac, and Linux platforms, without any changes to source code. Saphir makes use of concise dialect (DSL) code patterns to build graphic user interfaces and to perform common computational operations, with remarkably short and readable code syntax. The trivial size of the interpreter (.5 - 1.5 megabytes) complements Saphir's simple utilitarian design.
+
+SDL[edit]
+The SDL library offers also a development possibility beside Java, allowing the development with C and the simple porting of existing SDL and native C applications. By injection of a small Java shim and JNI the usage of native SDL code is possible,[50] allowing Android ports like e.g. the Jagged Alliance 2 video game.[51]
+
+The Simple project[edit]
+The goal of Simple is to bring an easy-to-learn-and-use language to the Android platform.[52] Simple is a BASIC dialect for developing Android applications. It targets professional and non-professional programmers alike in that it allows programmers to quickly write Android applications that use the Android runtime components.
+
+Similar to Microsoft Visual Basic 6, Simple programs are form definitions (which contain components) and code (which contains the program logic). The interaction between the components and the program logic happens through events triggered by the components. The program logic consists of event handlers which contain code reacting to the events.
+
+The Simple project is not very active,[53] the last source code update being in August 2009.
+
+Visual Studio 2015[edit]
+Visual Studio 2015 supports cross-platform development, letting C++ developers create projects from templates for Android native-activity applications, or create high-performance shared libraries to include in other solutions. Its features include platform-specific IntelliSense, breakpoints, device deployment and emulation.[54]
+
+WinDev Mobile[edit]
+WinDev Mobile is a proprietary IDE created by PC SOFT and is used to create graphical user interface (GUI) applications for smartphones and tablets (including Android devices). It uses the WLanguage as its programming language, which is available in English, French and Chinese.
+
+Xamarin[edit]
+With a C# shared codebase, developers can use Xamarin to write native iOS, Android, and Windows apps with native user interfaces and share code across multiple platforms. Xamarin has over 505,000 developers in more than 120 countries around the world as of February 2014.
+
+X11 Basic[edit]
+X11 Basic is a dialect of the Basic programming language with graphics capability that integrates features like shell scripting, CGI programming and full graphical visualisation into an easy-to-learn language. The syntax is mostly similar to the old GFA Basic found on Atari ST computers.[citation needed]
+
+Android Developer Challenge[edit]
+Main article: Android Developer Challenge
+The Android Developer Challenge was a competition to find the most innovative application for Android. Google offered prizes totaling 10 million US dollars, distributed between ADC I and ADC II. ADC I accepted submissions from January 2 to April 14, 2008. The 50 most promising entries, announced on May 12, 2008, each received a $25,000 award to further development.[55][56] It ended in early September with the announcement of ten teams that received $275,000 each, and ten teams that received $100,000 each.[57]
+
+ADC II was announced on May 27, 2009.[58] The first round of the ADC II closed on October 6, 2009.[59] The first-round winners of ADC II comprising the top 200 applications were announced on November 5, 2009. Voting for the second round also opened on the same day and ended on November 25. Google announced the top winners of ADC II on November 30, with SweetDreams, What the Doodle!? and WaveSecure being nominated the overall winners of the challenge.[60][61]
+
+Community-based firmware[edit]
+There is a community of open-source enthusiasts that build and share Android-based firmware with a number of customizations and additional features, such as FLAC lossless audio support and the ability to store downloaded applications on the microSD card.[62] This usually involves rooting the device. Rooting allows users root access to the operating system, enabling full control of the phone. Rooting has several disadvantages as well, including increased risk of hacking, high chances of bricking, losing warranty, increased virus attack risks, etc.[63] However, rooting allows custom firmwares to be installed, although the device's bootloader must also be unlocked. Modified firmwares allow users of older phones to use applications available only on newer releases.[64]
+
+Those firmware packages are updated frequently, incorporate elements of Android functionality that haven't yet been officially released within a carrier-sanctioned firmware, and tend to have fewer limitations. CyanogenMod and OMFGB are examples of such firmware.
+
+On September 24, 2009, Google issued a cease and desist letter[65] to the modder Cyanogen, citing issues with the re-distribution of Google's closed-source applications[66] within the custom firmware. Even though most of Android OS is open source, phones come packaged with closed-source Google applications for functionality such as the Android Market and GPS navigation. Google has asserted that these applications can only be provided through approved distribution channels by licensed distributors. Cyanogen has complied with Google's wishes and is continuing to distribute this mod without the proprietary software. It has provided a method to back up licensed Google applications during the mod's install process and restore them when the process is complete.[67]
+
+Java standards[edit]
+Obstacles to development include the fact that Android does not use established Java standards, that is, Java SE and ME. This prevents compatibility between Java applications written for those platforms and those written for the Android platform. Android only reuses the Java language syntax and semantics, but it does not provide the full class libraries and APIs bundled with Java SE or ME.[68] However, there are multiple tools in the market from companies such as Myriad Group and UpOnTek that provide Java ME to Android conversion services.[69][70][71]
+
+History[edit]
+
+The "Sooner" prototype phone,[72] prior to "Dream"
+Android was created by the Open Handset Alliance, which is led by Google. The early feedback on developing applications for the Android platform was mixed.[73] Issues cited include bugs, lack of documentation, inadequate QA infrastructure, and no public issue-tracking system. (Google announced an issue tracker on January 18, 2008.)[74] In December 2007, MergeLab mobile startup founder Adam MacBeth stated, "Functionality is not there, is poorly documented or just doesn't work... It's clearly not ready for prime time."[75] Despite this, Android-targeted applications began to appear the week after the platform was announced. The first publicly available application was the Snake game.[76][77] The Android Dev Phone is a SIM-unlocked and hardware-unlocked device that is designed for advanced developers. While developers can use regular consumer devices purchased at retail to test and use their applications, some developers may choose not to use a retail device, preferring an unlocked or no-contract device.
+
+A preview release of the Android SDK was released on November 12, 2007. On July 15, 2008, the Android Developer Challenge Team accidentally sent an email to all entrants in the Android Developer Challenge announcing that a new release of the SDK was available in a "private" download area. The email was intended for winners of the first round of the Android Developer Challenge. The revelation that Google was supplying new SDK releases to some developers and not others (and keeping this arrangement private) led to widely reported frustration within the Android developer community at the time.[78]
+
+On August 18, 2008, the Android 0.9 SDK beta was released. This release provided an updated and extended API, improved development tools and an updated design for the home screen. Detailed instructions for upgrading are available to those already working with an earlier release.[79] On September 23, 2008, the Android 1.0 SDK (Release 1) was released.[80] According to the release notes, it included "mainly bug fixes, although some smaller features were added." It also included several API changes from the 0.9 version. Multiple versions have been released since it was developed</p> 
+</body>
+</html>

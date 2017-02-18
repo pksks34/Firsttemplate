@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Question box</title>
+<style type="text/css">
+body{
+text-align:center;
+background-color:#666600;
+}
+#main{
+display:block;
+margin:150px auto;
+color:#ffffff;
+-webkit-border-radius:10px;
+opacity:0.6;
+background:red;
+width:450px;
+height:350px;
+-webkit-transition:-webkit-transform 2s,opacity 2s,background 2s,width 2s,height 2s;
+}
+#main:hover{
+-webkit-transform: rotate(360deg);
+opacity:1;
+background:#1ec7e6;
+width:750px;
+height:450px;
+}
+</style>
+</head>
+
+<body>
+<div id="main">
+<form action="#">
+<p align="center" style="margin-top:10px; padding-top:10px;">Email<input type="email" name="email" value="" placeholder="abcd@gmail.com" required />
+<p align="center" style="margin-top:20px; padding-top:20px;">Question<textarea cols="28" rows="8" name="question" placeholder="Question" required></textarea></p>
+<p align="center" style="margin-top:10px; padding-top:10px;"><input type="submit" name="submit" value="submit" /></p>
+
+</form>
+</div>
+</body>
+</html>

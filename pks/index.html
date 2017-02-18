@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>jquery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+
+<style> 
+body{background-color:#000000;}
+p{font-size:50px;color:yellow;}
+a{text-decoration:none;color:silver}
+a:hover{text-decoration:underline;}
+
+#flip {
+margin-left:0px;
+margin-right:0px;
+    padding: 5px;
+    text-align: center;
+	background-color:#999999;
+    
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+text-align:center;
+background-image:url(ze.jpg);
+    padding: 210px;
+    display: none;
+}
+</style>
+</head>
+<body>
+<div id="flip">Click for website</div>
+<div id="panel">
+<h1>Welcome to Zero Website</h1>
+<p align="center"><a href="zwebsite.html">Click to go website</a></p>
+</div>
+
+
+
+
+<script type="text/javascript" src="jquery.js"></script>
+
+</body>
+</html>
